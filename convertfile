@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+if [[ "$1" != "" ]]; then
+    sed "s/\(\*.*\*\)//g" <$1 | ./parse
