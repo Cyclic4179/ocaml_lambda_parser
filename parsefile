@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+if [[ -n "$1" ]]; then
+    a=$(<$1 tr "\n" " ")
+    b=$(echo $a | perl -pe 's/\(\*(?!\(\*)(?!\*\))(.(?!\(\*)(?!\*\)))*.?\*\)|\(\*\*\)//g')
+
+    while [[ "$a" != "$b" ]]; do
+        a=$b
+        b=$(echo $a | perl -pe 's/\(\*(?!\(\*)(?!\*\))(.(?!\(\*)(?!\*\)))*.?\*\)|\(\*\*\)//g')
+    done
+
+    #echo $b
+    echo $b | ./parser
+else
+    echo usage: $0 [FILE]
+fi

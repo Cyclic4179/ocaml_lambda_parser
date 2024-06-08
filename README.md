@@ -3,10 +3,22 @@
 
 # use with
 ```sh
-(tr "\n" " "; echo) | sed "s/\(\*.*\*\)//g" <a.ml | ./parser
+./parsefile thefile
+```
+(multiline and nested comments are supported, syntax as in ocaml: `(*...*)`)
+
+or:
+```sh
+(<thefile tr "\n" " "; echo) | ./parser
 ```
 
 or just `./parser` for stdin from terminal
 
-note:
-**nested comments (`(*` to `*)`) are not supported**
+**note:
+comments (`(*` to `*)`) are only supported when using the ./parsefile script**
+
+# language
+see garmmar in ./parser.mly, lexer in ./lexer.mll
+
+## ex
+excercise in ./fpv-ex
