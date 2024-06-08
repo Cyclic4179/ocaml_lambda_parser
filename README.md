@@ -6,6 +6,7 @@
 ./parsefile thefile
 ```
 (multiline and nested comments are supported, syntax as in ocaml: `(*...*)`)
+(perl required to run script)
 
 or:
 ```sh
