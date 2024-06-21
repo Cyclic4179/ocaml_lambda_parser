@@ -23,3 +23,6 @@ see garmmar in ./parser.mly, lexer in ./lexer.mll
 
 ## ex
 excercise in ./fpv-ex
+
+# license
+MIT lol
